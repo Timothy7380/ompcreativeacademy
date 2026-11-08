@@ -40,6 +40,14 @@ section[id]{scroll-margin-top:80px}
 .dlogo{opacity:.05;height:auto;filter:grayscale(.2)}
 .dl .dm{opacity:.045}
 @media (max-width:700px){.dl .dm{display:none}.dd{opacity:.06}}
+
+/* hero with full-bleed photo */
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:min(86vh,820px);display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;max-width:none;object-fit:cover;object-position:62% 35%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,10,10,.94) 0%,rgba(10,10,10,.82) 34%,rgba(10,10,10,.38) 66%,rgba(10,10,10,.2) 100%),linear-gradient(0deg,#0A0A0A 0%,rgba(10,10,10,0) 38%),linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,0) 22%)}
+.hero-inner{width:100%;max-width:1280px;margin:0 auto;padding:160px 24px 88px;box-sizing:border-box}
+.hero-cap{position:absolute;right:24px;bottom:24px;margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,245,242,.6)}
+@media (max-width:760px){.hero{min-height:auto}.hero-bg{object-position:64% 18%}.hero::before{background:linear-gradient(0deg,#0A0A0A 10%,rgba(10,10,10,.88) 46%,rgba(10,10,10,.15) 78%,rgba(10,10,10,.35) 100%)}.hero-inner{padding:340px 20px 64px}.hero-cap{display:none}}
 </style>
 </head>
 <body>
@@ -99,13 +107,17 @@ section[id]{scroll-margin-top:80px}
 <svg class="dd" style="top:95.7%;left:12.3%;width:62px;height:62px;transform:rotate(-10deg)"><use href="#d-play"/></svg>
 </div>
 <!-- HERO -->
-<section id="top" style="max-width: 1280px; margin: 0 auto; padding: 96px 24px 72px">
-<p style="margin: 0 0 20px; font-size: 15px; color: #BDBDB8; max-width: 560px; line-height: 1.6">A creative skills institution by OMP Studios, training photographers, videographers and content creators in Lagos.</p>
-<h1 style="margin: 0; font-size: clamp(40px, 7vw, 92px); line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; max-width: 1100px">We don’t just teach you to hold a camera. We train you to <span style="color: #FFD400">get booked.</span></h1>
+<section id="top" class="hero">
+<img class="hero-bg" src="images/hero.jpg" alt="A speaker addressing a full room at the OMP Creative Business Summit in Lagos" fetchpriority="high">
+<div class="hero-inner">
+<p style="margin: 0 0 22px; font-size: 16px; color: #E4E4DF; max-width: 520px; line-height: 1.6">A creative skills institution by OMP Studios, training photographers, videographers and content creators in Lagos.</p>
+<h1 style="margin: 0; font-size: clamp(40px, 5.6vw, 76px); line-height: 1.03; font-weight: 800; letter-spacing: -0.03em; max-width: 760px">We don’t just teach you to hold a camera. We train you to <span style="color: #FFD400">get booked.</span></h1>
 <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px">
 <a href="#register" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFD400; color: #0A0A0A; font-weight: 700; text-decoration: none">Secure your seat</a>
-<a href="#tracks" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1px solid #444; color: #F5F5F2; font-weight: 600; text-decoration: none">See the courses</a>
+<a href="#tracks" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1px solid rgba(245,245,242,0.55); background: rgba(10,10,10,0.35); backdrop-filter: blur(6px); color: #F5F5F2; font-weight: 600; text-decoration: none">See the courses</a>
 </div>
+</div>
+<p class="hero-cap">OMP Creative Business Summit · Lagos, 2026</p>
 </section>
 
 <!-- TICKER -->
